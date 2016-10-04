@@ -1,4 +1,4 @@
-# A syslog stress client.
+# A simple web application with busybox root.
 #
 # Sample run
 # ~~~~~~~~~~
