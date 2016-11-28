@@ -6,7 +6,7 @@
 
 FROM scratch
 MAINTAINER Jiri Mencak
-COPY ./hello-root /
+COPY ./root /
 COPY hello-openshift /usr/local/bin/hello-openshift
 EXPOSE 8080 8888
 CMD ["/usr/local/bin/hello-openshift"]

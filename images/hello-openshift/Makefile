@@ -6,7 +6,7 @@ all: $(PROGRAM)
 $(PROGRAM): $(PROGRAM).go
 	go build $<
 
-static: $(PROGRAM).go
+static: 
 	CGO_ENABLED=0 go build -a -installsuffix cgo -ldflags '-s' $<
 
 run: $(PROGRAM).go
@@ -15,7 +15,7 @@ run: $(PROGRAM).go
 fmt format: $(PROGRAM).go
 	go fmt $<
 
-docker: $(PROGRAM) Dockerfile
+docker: static Dockerfile
 	(docker build -t $(TAG) .)
 
 push: 
@@ -23,6 +23,10 @@ push:
 
 strip:
 	strip $(PROGRAM)
+
+.DEFAULT: 
+	PORT=$@ ./$(PROGRAM)
+#	docker run -it --rm -p $@:8080 $(TAG)
 
 clean:
 	go clean
