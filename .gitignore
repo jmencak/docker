@@ -2,7 +2,6 @@ images/haproxy
 images/httpd
 images/httpd-rhscl
 images/httpd-scl
-images/mb
 images/nginx
 images/nginx-alpine
 pause

@@ -1,0 +1,16 @@
+[
+  {
+    "scheme": "http",
+    "tls-session-reuse": true,
+    "host": "172.16.113.254",
+    "port": 8080,
+    "method": "GET",
+    "path": "/",
+    "keep-alive-requests": 1,
+    "clients": 40,
+    "delay": {
+      "min": 0,
+      "max": 100
+    }
+  }
+]
