@@ -181,7 +181,7 @@ main() {
       xz -0 -T0 ${results_csv}
 
       if have_server "${SERVER_RESULTS}" ; then
-        scp -rp ${dir_out} ${SERVER_RESULTS}
+        scp -o StrictHostKeyChecking=false -rp ${dir_out} ${SERVER_RESULTS}
       fi
       timeout_exit_status || die $? "${RUN} failed: scp: $?"
       ;;
